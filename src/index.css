@@ -1,13 +1,76 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body{
+    font-family: 'Raleway', sans-serif;
+    background-color: rgb(230, 227, 227);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img {
+    width: 12rem;
 }
+
+input:focus {
+    outline: none;
+}
+
+.card-title {
+    font-weight: bolder !important;
+}
+
+.card-body {
+    line-height: .6rem !important;
+}
+
+.hideDiv {
+    display: none;
+}
+
+.toggleBtn {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+    transition: transform .5s ;
+}
+
+.toggleBtn:hover {
+    transform: rotate(180deg);
+}
+
+.horizontal {
+    position: absolute;
+    background-color: rgb(199, 199, 199);
+    border-radius: 20%;
+    width: 30px;
+    height: 6px;
+    left: 0;
+    top: 0;
+    transform: translate(8px, 22px);
+    margin-left: 3.5px;
+
+}
+
+.vertical {
+    position: absolute;
+    background-color: rgb(199, 199, 199);
+    width: 6px;
+    height: 30px;
+    border-radius: 20%;
+    left: 0;
+    top: 0;
+    transform: translate(23.5px, 10px);
+}
+
+.tag {
+    padding: .5rem;
+    background-color: rgb(207, 207, 207);
+    margin-right: .3rem;
+    border-radius: 5px;
+}
+
+.tagInput:focus {
+    border-color: black !important;
+}
+
