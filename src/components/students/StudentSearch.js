@@ -98,10 +98,10 @@ function StudentSearch() {
       let inputName = e.target.name
 
       if(inputName === 'name') {
-        searchName(nameRef.current.value)
+        searchName(nameRef.current.value.trim().toLowerCase())
       }
       if(inputName === 'tag'){
-        searchTag(tagRef.current.value)
+        searchTag(tagRef.current.value.trim().toLowerCase())
       }
     }
 
