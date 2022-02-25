@@ -1,5 +1,4 @@
-
-// Get students
+// API Request to Fetch Students Data
 export const fetchStudentsData = async () => {
     
     const STUDENTS_URL = process.env.REACT_APP_HATCHWAY_URL
@@ -12,6 +11,8 @@ export const fetchStudentsData = async () => {
         return data.students
 
     } catch (error) {
+
         console.log(error)
+        
     }
 }

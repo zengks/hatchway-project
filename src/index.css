@@ -9,10 +9,6 @@ img {
     width: 12rem;
 }
 
-/* input {
-    background-color: white;
-} */
-
 .container {
     width: 80% !important;
     margin: 5rem auto !important;
@@ -84,6 +80,10 @@ input:focus {
     border-radius: 5px;
 }
 
+.tagInput {
+    width: 40%;
+    font-size: 1.2rem;
+}
 .tagInput:focus {
     border-color: black !important;
 }

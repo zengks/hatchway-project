@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+
 import StudentGrades from './StudentGrades';
 import AddTags from '../AddTags';
 import DisplayTags from '../DisplayTags'
@@ -6,11 +7,12 @@ import ToggleBtn from '../ToggleBtn';
 
 function StudentItem( {student: {pic, id, lastName, firstName, email, company, skill, grades, tags, isToggle}} ) {
 
+    // Calculate grades average and return result
     const gradeAverage = (grades) => {
         let newGrade = []
 
         grades.forEach(grade => {
-        newGrade.push(parseInt(grade))
+            newGrade.push(parseInt(grade))
         });
 
         let result = newGrade.reduce((a,b) => a+b) / newGrade.length
@@ -51,7 +53,6 @@ function StudentItem( {student: {pic, id, lastName, firstName, email, company, s
                 <AddTags studentId={id} />
 
             </div>
-
         </div>
 
         <ToggleBtn studentId={id} isToggle={isToggle} />

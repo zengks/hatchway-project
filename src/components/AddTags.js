@@ -1,4 +1,5 @@
 import {useContext} from 'react'
+
 import StudentContext from '../context/StudentContext'
 
 function AddTags({ studentId }) {
@@ -18,6 +19,7 @@ function AddTags({ studentId }) {
 
         let cur = students
 
+        // Avoid adding repeated tags
         cur.map((student) => {
         if(student.id === studentId && !student.tags.includes(newTag)) {
             student.tags.push(newTag)
@@ -34,11 +36,9 @@ function AddTags({ studentId }) {
     }
 
     return (
-        <div>
-            <form onSubmit={onSubmit}>
-                <input className='border-0 p-2 mb-4 border-bottom tagInput' style={{ width: "40%", fontSize: '1.2rem' }} type='text' name='tag'  placeholder="Add a tag" />
-            </form>
-        </div>
+        <form onSubmit={onSubmit}>
+            <input className='border-0 p-2 mb-4 border-bottom tagInput' type='text' name='tag'  placeholder="Add a tag" />
+        </form>
     )
 }
 

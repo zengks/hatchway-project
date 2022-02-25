@@ -1,4 +1,5 @@
 import {useContext} from 'react'
+
 import StudentContext from '../context/StudentContext'
 
 function ToggleBtn({studentId, isToggle}) {
@@ -7,6 +8,7 @@ function ToggleBtn({studentId, isToggle}) {
 
     let curStudents = students
 
+    // Change isToggle value when toggle button is clicked
     const onToggle = () => {
         curStudents.map((student) => {
             if(student.id === studentId) {

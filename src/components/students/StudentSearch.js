@@ -1,4 +1,5 @@
 import {useContext, useEffect, useRef} from 'react'
+
 import { fetchStudentsData } from '../../context/StudentAction'
 import StudentContext from '../../context/StudentContext'
 
@@ -10,7 +11,7 @@ function StudentSearch() {
     const tagRef = useRef(null)
 
     useEffect(() => {
-      // Retrieve original students data on loading
+      // Retrieve all students data when loading
       const getStudentsData = async () => {
         const studentData = await fetchStudentsData()
         addToggleAndTags(studentData)
@@ -19,10 +20,13 @@ function StudentSearch() {
           payload: studentData
         })
       }
+
       getStudentsData()
       
     }, [dispatch])
 
+    // Inject toggle and tag fields to students data
+    // And return modified students data
     const addToggleAndTags = (studentData) => {
       studentData.map((student) => {
         student.isToggle = false
@@ -31,6 +35,7 @@ function StudentSearch() {
       })
     }
 
+    // Filter student list based on name input
     const searchName = (name) => {
       if(name !== ''){
         const results = students.filter((student) => {
@@ -55,6 +60,7 @@ function StudentSearch() {
       }
     }
 
+    // Filter student list based on tag input
     const searchTag = (tagName) => {
       if(tagName !== ''){
         let lowerTagName = tagName.trim().toLowerCase()
@@ -85,6 +91,8 @@ function StudentSearch() {
       }
     }
 
+    // Call search functions whenever
+    // name or input values change
     const handleChange = (e) => {
       e.preventDefault()
       let inputName = e.target.name

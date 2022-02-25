@@ -1,6 +1,4 @@
-
 function DisplayTags({tags}) {
-
   return (
     <>
       {tags.map((tag, index) => 

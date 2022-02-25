@@ -1,8 +1,6 @@
-
 import StudentResult from './components/students/StudentResult'
 import StudentSearch from './components/students/StudentSearch'
 import { StudentProvider } from './context/StudentContext'
-
 
 function App() {
   return (
@@ -12,9 +10,7 @@ function App() {
           <StudentSearch />
           <StudentResult />
         </div>
-        
       </StudentProvider>
-      
     </>
   );
 }
